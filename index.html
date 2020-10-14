@@ -62,7 +62,7 @@
 		</nav>
                                              
                                              <nav>
-                                                                    已发表文章: 2 篇。
+                                                                    已发表文章: 3 篇。
                                              </nav>
 		<nav class="header-smart-menu">
     		
@@ -160,6 +160,103 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Hyper-v的使用及配置简易教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/14/Hyper-v%E7%9A%84%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%85%8D%E7%BD%AE%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/">Hyper-v的使用及配置简易教程</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/14/Hyper-v%E7%9A%84%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%85%8D%E7%BD%AE%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2020-10-14T15:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-14</time>
+</a>
+        
+        
+      </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##视频教程<br>###第二版教程:<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1D7411C7Zr">https://www.bilibili.com/video/BV1D7411C7Zr</a></p>
+<iframe src="//player.bilibili.com/player.html?aid=99516039&bvid=BV1D7411C7Zr&cid=169856433&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+###第一版教程:https://www.bilibili.com/video/BV1G7411V7UJ
+<iframe src="//player.bilibili.com/player.html?aid=88457050&bvid=BV1G7411V7UJ&cid=151105332&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+##注意事项
+①新建虚拟机
+务必选择1、网络：default switch
+2、硬盘：20G以上
+3、代数：最好第一代
+4、镜像：网上自查，不支持macos
+②安装问题
+1、如果你的虚拟机只是升级版本，只需点第一个
+2、一般选择第二个，然后点下一步，不要点别的
+③网络配置问题
+1、新建网络交换器，选择内部网络
+2、打开主机的网络和共享中心，把你连的网络共享给新建的虚拟交换器
+3、右键新建虚拟交换器-》属性-》ipv4属性，查看ip地址例如192.168.137.0，记住第三个字段，137。设x=137
+4、打开虚拟机的网络和共享中心，右键网络-》属性-》ipv4属性，在ip栏填写：192.168.x.(随便)；在网关栏写192.168.x.1；在子网掩码：255.255.255.0；dns服务器192.168.x.1；
+5、禁用该网络再启用或者重启虚拟机
+感谢！如有疑问在评论区评论
+![avatar](https://i0.hdslb.com/bfs/emote/4683fd9ffc925fa6423110979d7dcac5eda297f4.png@100w_100h.webp)
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">虚拟机,程序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/14/Hyper-v%E7%9A%84%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%85%8D%E7%BD%AE%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
   
     <article id="post-ffmpeg和ffplay的下载" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -419,6 +516,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">虚拟机,程序</a>
               </li>
             
             <div class="clearfix"></div>
