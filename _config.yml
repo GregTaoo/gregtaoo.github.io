@@ -96,7 +96,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: jekyll-theme-next
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -105,11 +105,3 @@ deploy:
   repo: https://github.com/gregtaoo/gregtaoo.github.io
   # example, https://github.com/hexojs/hexojs.github.io
   branch: master
-
-math:
-  enable: true
-  # Default(true) will load mathjax/katex script on demand
-  # That is it only render those page who has 'mathjax: true' in Front Matter.
-  # If you set it to false, it will load mathjax/katex srcipt EVERY PAGE.
-  per_page: false
-  engine: mathjax
