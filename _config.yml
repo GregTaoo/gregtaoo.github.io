@@ -106,6 +106,10 @@ deploy:
   # example, https://github.com/hexojs/hexojs.github.io
   branch: master
 
-mathjax:
+math:
   enable: true
-  per_page: true
+  # Default(true) will load mathjax/katex script on demand
+  # That is it only render those page who has 'mathjax: true' in Front Matter.
+  # If you set it to false, it will load mathjax/katex srcipt EVERY PAGE.
+  per_page: false
+  engine: mathjax
