@@ -920,15 +920,15 @@ document.addEventListener('DOMContentLoaded', () => {
       fn()
     })
   })
-  
-  function addScript(url, onload){
-	var script = document.createElement('script');
-	script.setAttribute('type','text/javascript');
-	script.setAttribute('src',url);
-	script.setAttribute('onload',onload);
-	document.getElementsByTagName('head')[0].appendChild(script);
-  }
-
-  addScript('https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js',() => {});
-  addScript('https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js',() => {renderMathInElement(document.body);});
 })
+
+function addScript(url, onload){
+  var script = document.createElement('script');
+  script.setAttribute('type', 'text/javascript');
+  script.setAttribute('src', url);
+  script.setAttribute('onload', onload);
+  document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+addScript('https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js', "");
+addScript('https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js', "renderMathInElement(document.body)");
