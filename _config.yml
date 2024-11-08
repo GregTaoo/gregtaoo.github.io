@@ -112,3 +112,8 @@ markdown:
       name: '@neilsustc/markdown-it-katex'
       options:
         strict: false
+
+katex:
+  enable: true
+  per_page: false
+  hide_scrollbar: true
