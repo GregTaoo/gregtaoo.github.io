@@ -105,3 +105,13 @@ deploy:
   repo: https://github.com/gregtaoo/gregtaoo.github.io
   # example, https://github.com/hexojs/hexojs.github.io
   branch: master
+
+markdown_it_plus:
+  # ...
+  plugins:
+    - plugin:
+      name: '@iktakahiro/markdown-it-katex'
+      enable: false
+    - plugin:
+      name: '@andatoshiki/markdown-it-katex'
+      enable: true
