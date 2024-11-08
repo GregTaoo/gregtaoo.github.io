@@ -920,6 +920,27 @@ document.addEventListener('DOMContentLoaded', () => {
       fn()
     })
   })
+  
+  
+// 创建一个 <style> 元素
+const style = document.createElement('style');
+
+// 将 CSS 样式内容添加到 <style> 元素中
+style.textContent = `
+    .katex {
+        display: inline !important; /* 确保公式显示为内联 */
+        visibility: visible !important; /* 确保公式可见 */
+        color: black; /* 设置颜色 */
+    }
+    .katex-display {
+        display: block !important; /* 确保块级公式显示 */
+        visibility: visible !important;
+        color: black;
+    }
+`;
+
+// 将 <style> 元素添加到 <head> 中
+document.head.appendChild(style);
 })
 
 function addScript(url, onload){
@@ -930,5 +951,13 @@ function addScript(url, onload){
   document.getElementsByTagName('head')[0].appendChild(script);
 }
 
+function addCSS(url) {
+  var script = document.createElement('link');
+  script.setAttribute('rel', 'stylesheet');
+  script.setAttribute('href', url);
+  document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+addCSS('https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css');
 addScript('https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js', "");
-addScript('https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js', "renderMathInElement(document.body)");
+addScript('https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js', 'renderMathInElement(document.body,{delimiters: [{left: "$$", right: "$$", display: true},{left: "$", right: "$", display: false}]})');
