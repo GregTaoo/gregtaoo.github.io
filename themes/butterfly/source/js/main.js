@@ -921,5 +921,14 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
   
-  document.write('<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>');
+  function addScript(url, onload){
+	var script = document.createElement('script');
+	script.setAttribute('type','text/javascript');
+	script.setAttribute('src',url);
+	script.setAttribute('onload',onload);
+	document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  addScript('https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js',() => {});
+  addScript('https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js',() => {renderMathInElement(document.body);});
 })
