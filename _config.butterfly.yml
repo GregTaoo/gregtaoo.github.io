@@ -55,14 +55,14 @@ social:
 favicon: /img/favicon.png
 
 avatar:
-  img: /img/butterfly-icon.png
+  img: https://avatars.githubusercontent.com/u/61447884
   effect: false
 
 # Disable all banner images
 disable_top_img: false
 
 # If the banner of page not setting, it will show the default_top_img
-default_top_img:
+default_top_img: /cover.png
 
 # The banner image of index page
 index_img:
