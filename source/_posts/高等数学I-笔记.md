@@ -1,6 +1,6 @@
 ---
-title: 高等数学笔记
-date: 2024-11-07 16:57:53
+title: 高等数学I 笔记
+date: 2024-11-16 22:41:20
 tags:
 ---
 
@@ -426,4 +426,26 @@ $$
    $$
    \frac{1}{1+x}=1-x+x^2+\cdots+(-1)^nx^n+\frac{(-1)^{n+1}}{(1+\theta x)^{n+2}}x^{n+1},\theta\in(0,1)
    $$
+
+### 函数凸性
+
+$f(x)$ 在区间 $I$ 连续，若 $\forall x1,x2\in I,\forall\alpha\in(0,1)$，都有 $f[\alpha x_1+(1-\alpha)x_2]\le \alpha f(x_1)+(1-\alpha)f(x_2)$ 则为下凸（$<$ 为严格下凸）
+
+第一判别法：$f(x)\in D(a,b)$，且 $f'(x)$ 在 $(a,b)$ 内严格单调增加（减少），则函数 $f(x)$ 严格下凸（上凸）
+
+第二判别法：即通过二阶导判断 $f'(x)$ 单调性
+
+### 函数拐点
+
+上凸下凸的分界点，$x_0$ 称为函数 $f(x)$ 拐点，$(x_0,f(x_0))$ 称为曲线 $y=f(x)$ 拐点；函数的拐点在二阶导数为 $0$ 或不存在的点之中
+
+### 渐近线
+
+1. 铅直渐近线：$\lim_{x\to x_0}f(x)=\infty$，则渐近线为 $x=x_0$
+
+2. 水平渐近线：$\lim_{x\to x_0}f(x)=b$，则渐近线为 $y=b$
+
+3. 斜渐近线：$\lim_{x\to\infty}(f(x)-ax-b)=0$，则渐近线为 $y=ax+b$
+
+   曲线 $y=f(x)$ 有渐近线 $y=ax+b\quad\Leftrightarrow\quad a=\lim_{x\to\infty}\frac{f(x)}{x},b=\lim_{x\to\infty}[f(x)-ax]$
 
