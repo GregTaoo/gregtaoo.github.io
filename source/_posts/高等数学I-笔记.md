@@ -22,7 +22,7 @@ $$
 ### 归纳法
 
 1. $n=1$ 时， $P_1$ 成立
-2. 假设 $n=k$ 时 $P_k$ 成立**（强归纳：$\forall m\leq k, P_m$ 成立）**
+2. 假设 $n=k$ 时 $P_k$ 成立（强归纳：$\forall m\leq k, P_m$ 成立）
 3. 证明当 $n=k+1$ 时 $P_{k+1}$ 成立
 
 ### 不等式
@@ -313,7 +313,17 @@ $f(x)\in C[a,b]\cap D(a,b),f(a)=f(b)$，则 $\exist\xi\in(a,b),f'(\xi)=0$
 
 广义罗尔定理3：若 $f(x)\in(a,+\infty),\lim_{x\to a^+}f(x)=\lim_{x\to+\infty}f(x)=A,\exist\xi\in(a,+\infty),f'(\xi)=0$
 
-证明：存在 $x_0$，分别讨论 $f(x)=A,f(x_0)>A,f(x_0)<A$，考虑 $f(x_0)>A$ 根据极限保号性，有 $0<\delta<\frac{x_0-a}{2},M>x_0$（$a+\delta<x_0<M$，但是似乎 $\delta$ 取值范围可以是除以大于1的数）$f(x)<\frac{f(x_0)+A}{2}<f(x_0)$（局部保号，为了证明该式，取 $\epsilon=\frac{f(x_0)-A}{2}>0$，由 $|f(x)-A|<\epsilon$ 推得）$x\in(a,a+\delta]\cup[M,+\infty)$，则 $f(x_0)>f(a+\delta),f(x_0)>f(M)$，故最大值在 $(a+\delta,M)$ 取得，根据费马定理可取得
+证明1（待完善）：存在 $x_0$，分别讨论 $f(x)=A,f(x_0)>A,f(x_0)<A$，考虑 $f(x_0)>A$ 根据极限保号性，有 $0<\delta<\frac{x_0-a}{2},M>x_0$（$a+\delta<x_0<M$，但是似乎 $\delta$ 取值范围可以是除以大于1的数）$f(x)<\frac{f(x_0)+A}{2}<f(x_0)$（局部保号，为了证明该式，取 $\epsilon=\frac{f(x_0)-A}{2}>0$，由 $|f(x)-A|<\epsilon$ 推得）$x\in(a,a+\delta]\cup[M,+\infty)$，则 $f(x_0)>f(a+\delta),f(x_0)>f(M)$，故最大值在 $(a+\delta,M)$ 取得，根据费马定理可取得
+
+证明2：构造辅助函数，具体证明省略
+$$
+\left\{
+\begin{array}{l}
+g(x)=f(\tan x),&x\in(0,\frac{\pi}{2})\\
+g(x)=A,&x=0,\frac{\pi}{2}
+\end{array}
+\right.
+$$
 
 ### Lagrange 拉格朗日定理
 
