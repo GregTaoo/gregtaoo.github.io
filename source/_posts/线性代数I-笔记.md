@@ -17,7 +17,7 @@ $(AB)^\top=B^\top A^\top$
 3. $A$ 的简化阶梯型为单位矩阵
 4. $A$ 是一组初等矩阵的乘积
 5. $A\vec{x}=\vec{b}$ 对任何 $n\times1$ 的列向量 $\vec{b}$ 都有解（且仅有一个解）
-6. $\det(A)=0$
+6. $\det(A)\neq0$
 7. $A$ 的所有 $n$ 个**行**向量线性无关
 8. $A$ 的所有 $n$ 个**列**向量线性无关
 9. $span(Row(A))=\mathbb{R}^n$
@@ -65,6 +65,10 @@ $$
 $\vec{u}\times\vec{v}$ 与 $\vec{u}$ 和 $\vec{v}$ 正交
 
 Lagrange's identity: $||\vec{u}\times\vec{v}||^2=||\vec{u}||^2||\vec{v}||^2-(\vec{u}\cdot\vec{v})^2$
+
+Cauchy-Schwarz inequality: $|\vec{u}\cdot\vec{v}|\leq||\vec{u}||\ ||\vec{v}||$
+
+Triangle inequality: $||\vec{u}+\vec{v}||\leq||\vec{u}||+||\vec{v}||,d(\vec{u},\vec{v})\leq d(\vec{u},\vec{w})+d(\vec{w},\vec{v})$
 
 $\vec{u}\times\vec{v}=-\vec{v}\times\vec{u},\vec{u}\times\vec{u}=0$
 
