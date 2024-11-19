@@ -117,25 +117,25 @@ $$
 
 ### 区间套定理
 
-若$[a_{n+1},b_{n+1}]\subset[a_n,b_n],\forall n\in\mathbf{N}_+$，且有$\lim_{n\to\infty}(b_n-a_n)=0$, 则存在唯一实数$\xi,\forall n\in\mathbf{N}_+$, 有$a_n\leq\xi\leq b_n$，换言之 
+若 $[a_{n+1},b_{n+1}]\subset[a_n,b_n],\forall n\in\mathbf{N}_+$，且有 $\lim_{n\to\infty}(b_n-a_n)=0$, 则存在唯一实数 $\xi,\forall n\in\mathbf{N}_+$, 有 $a_n\leq\xi\leq b_n$，换言之 
 $$
 \xi=\bigcap_{n=1}^{\infty}[a_n,b_n]
 $$
 
 ### 函数极限
 
-$f(x)$在$\mathring{U}(a)$内有定义，若存在 $A\in\mathbb{R},\forall\epsilon>0,\exist\delta>0$，使得当 $0<|x-a|<\delta$ 时，$|f(x)-A|<\epsilon$，则$\lim_{x\to a}f(x)=A$
+$f(x)$ 在 $\mathring{U}(a)$ 内有定义，若存在 $A\in\mathbb{R},\forall\epsilon>0,\exist\delta>0$，使得当 $0<|x-a|<\delta$ 时，$|f(x)-A|<\epsilon$，则$\lim_{x\to a}f(x)=A$
 
-$f(x)$在$(-\infty,-a)\cup(a,+\infty)(a>0)$内有定义，若存在 $A\in\mathbb{R},\forall\epsilon>0,\exist X>0(X>a)$，使得当 $|x|>X$ 时，$|f(x)-A|<\epsilon$，则 $\lim_{x\to\infty}f(x)=A$
+$f(x)$ 在 $(-\infty,-a)\cup(a,+\infty)(a>0)$ 内有定义，若存在 $A\in\mathbb{R},\forall\epsilon>0,\exist X>0(X>a)$，使得当 $|x|>X$ 时，$|f(x)-A|<\epsilon$，则 $\lim_{x\to\infty}f(x)=A$
 
-**TIP：欲证明 $\lim_{x\to x_0}f(x)=L$，通过 $f(x)-L$ 构造 $x-x_0$，以 $\epsilon$ 表示 $\delta$；放缩时注意控制 $x, \delta$ 范围**
+TIP：欲证明 $\lim_{x\to x_0}f(x)=L$，通过 $f(x)-L$ 构造 $x-x_0$，以 $\epsilon$ 表示 $\delta$；先限定 $\delta<1$，再得到 $|x-A|<\delta<1$，得到 $x$ 范围，再进行放缩。最后注意例如：$\delta=\min\{3\epsilon,1\}$
 
 例题 quiz1第一题：证明 $\lim_{x\to 2}x^2=4$
 
-考虑 $1<x<3$, 构造 $x-2$，考虑因式分解
+考虑 $|x-2|<\delta<1$，得出 $1<x<3$，构造 $x-2$，考虑因式分解
 $$
 |x^2-4|=|(x-2)(x+2)|<|5(x-2)|<\epsilon\\
-\delta=\frac{\epsilon}{5},0<|x-2|<\delta
+\delta=\min\{\frac{\epsilon}{5},1\},0<|x-2|<\delta
 $$
 课本例2.26：证明 $\lim_{x\to 1}\ln x=0$
 

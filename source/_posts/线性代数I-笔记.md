@@ -1,8 +1,31 @@
 ---
-title: 线性代数笔记
+title: 线性代数I-笔记
 date: 2024-11-08 16:49:37
 tags:
 ---
+
+### 矩阵
+
+$(AB)^{-1}=B^{-1}A^{-1}$
+
+$(AB)^\top=B^\top A^\top$
+
+### 矩阵可逆的等价说法
+
+1. $A$ 可逆
+2. $A\vec{x}=0$ 只有平凡解
+3. $A$ 的简化阶梯型为单位矩阵
+4. $A$ 是一组初等矩阵的乘积
+5. $A\vec{x}=\vec{b}$ 对任何 $n\times1$ 的列向量 $\vec{b}$ 都有解（且仅有一个解）
+6. $\det(A)=0$
+7. $A$ 的所有 $n$ 个**行**向量线性无关
+8. $A$ 的所有 $n$ 个**列**向量线性无关
+9. $span(Row(A))=\mathbb{R}^n$
+10. $span(Col(A))=\mathbb{R}^n$
+11. $A$ 的所有 $n$ 个**行**向量构成 $\mathbb{R}^n$ 的一组基底
+12. $A$ 的所有 $n$ 个**列**向量构成 $\mathbb{R}^n$ 的一组基底
+13. $rank(A)=n$
+14. $nullity(A)=0$
 
 ### 行列式
 
@@ -45,7 +68,13 @@ Lagrange's identity: $||\vec{u}\times\vec{v}||^2=||\vec{u}||^2||\vec{v}||^2-(\ve
 
 $\vec{u}\times\vec{v}=-\vec{v}\times\vec{u},\vec{u}\times\vec{u}=0$
 
+### 向量空间
 
+注意：要满足有零向量、满足加法交换律结合律、有加法相反数
+
+### 秩
+
+$rank(A^\top A)=rank(A)$
 
 
 
