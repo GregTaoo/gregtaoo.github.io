@@ -60,10 +60,8 @@ $$
 
 ### 三角函数
 
-正割余割
-$$
-\sec x=\frac{1}{\cos x}, \csc x=\frac{1}{\sin x}
-$$
+正割余割：$\sec x=\frac{1}{\cos x}, \csc x=\frac{1}{\sin x}$
+
 双曲函数
 $$
 \sinh x=\frac{e^x-e^{-x}}{2},\cosh x=\frac{e^x+e^{-x}}{2}\\
@@ -81,7 +79,7 @@ $$
 
 ### 数列极限
 
-对数列$\{x_n\}$, 若存在数$A$, $\forall \epsilon>0,\exist N\in\mathbf{N}, \forall n>N$, 有$|x_n-A|<\epsilon$, 则数列$\{x_n\}$收敛于$A$ 
+对数列 $\{x_n\}$, 若存在数 $A$, $\forall \epsilon>0,\exist N\in\mathbf{N}, \forall n>N$, 有 $|x_n-A|<\epsilon$, 则数列 $\{x_n\}$ 收敛于$A$ 
 
 若$A$不存在，则称数列$\{x_n\}$发散/不收敛
 
@@ -95,6 +93,8 @@ $$
 
 分别讨论 $x=1,x=-1,|x|<1$ 情况，对于 $|x|<1$，分子分母同乘 $1-x$ 即可
 
+某思路：可构造有理数列逼近无理数
+
 ### 夹逼定理
 
 课本例2.15，求 $\lim_{n\to \infty}\frac{c^n}{n!},c>0$
@@ -105,7 +105,9 @@ $$
 $$
 夹逼可得极限为0
 
-思路：控制 $n$ 的范围，然后求出 $x_n$ 范围，从而夹逼（例：课本例2.16，证明 $\lim_{n\to\infty}\sqrt[n]{n}=1$）
+课本例2.16，证明 $\lim_{n\to\infty}\sqrt[n]{n}=1$（思路：构造 $x_n$，控制 $n$ 的范围以导出 $x_n$ 范围，夹逼）
+
+设 $x_n=\sqrt[n]{n}-1$，当 $n\ge2$ 时，有 $n=(1+x_n)^n=1+C^1_nx_n+C^2_nx^2_n+\cdots+x^n_n>\frac{n(n-1)}{2}x^2_n$ （此处放缩只取第三项）；从而 $0\le x_n<\sqrt{\frac{2}{n-1}}$，夹逼定理易证 $\lim_{n\to\infty}x_n=\lim_{n\to\infty}\sqrt[n]{n}-1=0$，得证
 
 ### 递归数列
 
@@ -217,7 +219,7 @@ $$
 \lim_{x\to +\infty}\frac{x\cdot x^2\cdot\cdots\cdot x^n}{[(nx)^n+1]^{\frac{n+1}{2}}}\leq\lim_{x\to +\infty}\frac{(x+1)(x^2+1)\cdots(x^n+1)}{[(nx)^n+1]^{\frac{n+1}{2}}}\leq\lim_{x\to +\infty}\frac{(x+1)(x^2+1)\cdots(x^n+1)}{(nx)^{\frac{n(n+1)}{2}}}
 $$
 
-习题课上例题：三角函数周期性、有理化、等价无穷小
+习题课上例题：**三角函数周期性**、有理化、等价无穷小
 $$
 \begin{aligned}
 \lim_{n\to\infty}[nsin(2\pi\sqrt{n^2+1})]&=\lim_{n\to\infty}[nsin(2\pi\sqrt{n^2+1}-2n\pi)]\\
