@@ -77,6 +77,8 @@ $$
 \end{aligned}
 $$
 
+常用变换: $\tan x=\frac{1}{\cos^2x}-1,\cot x=\frac{1}{\sin^2x}-1$
+
 ### 数列极限
 
 对数列 $\{x_n\}$, 若存在数 $A$, $\forall \epsilon>0,\exist N\in\mathbf{N}, \forall n>N$, 有 $|x_n-A|<\epsilon$, 则数列 $\{x_n\}$ 收敛于$A$ 
@@ -486,5 +488,48 @@ $$
 \end{aligned}
 $$
 
-### 求解不定积分
+### 不定积分技巧
+
+1. 遇到根号时考虑三角换元，或用 $t$ 换掉根式
+2. 建立递推公式通常用分部积分
+3. 凑出分子是分母导数的项
+4. $\sin mx\cos nx$ 诸如此类考虑积化和差
+5. 三角函数万能代换：$t=\tan\frac{x}{2}$
+
+### 定积分
+
+保号性、保序性、乘积函数可积
+
+绝对值不等式：
+$$
+\left|\int^b_af(x)dx\right|\le\int^b_a|f(x)|dx
+$$
+估值不等式：$f(x)$ 可积，且 $m\le f(x)\le M$
+$$
+m(b-a)\le\int^b_af(x)dx\le M(b-a)
+$$
+Schwarz 施瓦茨不等式：
+$$
+\left(\int^b_af(x)g(x)dx\right)^2\le\int^b_af^2(x)dx\cdot\int^b_ag^2(x)dx
+$$
+积分中值定理：函数 $f$ 连续，$g$ 黎曼可积，$g(x)$ 在 $[a,b]$ 不变号，则 $\exist\xi\in[a,b]$，使得
+$$
+\int^b_af(x)g(x)dx=f(\xi)\int^b_ag(x)dx
+$$
+
+### 变上限积分函数
+
+$\Phi(x)=\int^x_af(t)dt$，$\Phi$ 连续且可导，且 $\Phi'(x)=f(x)$
+
+求变限积分导数时，积分内部 $x$ 看作常数
+
+### 定积分应用
+
+极坐标下求面积：$S=\frac{1}{2}\int^\beta_\alpha r^2(\theta)d\theta$
+
+求体积：薄片法，薄壳法（$\Delta V\approx[\pi(x+dx)^2-\pi x^2]f(x)=\pi f(x)[2xdx+(dx)^2]$，故微元 $dV=2\pi xf(x)dx$
+
+求弧长：$s=\int^b_a\sqrt{1+y'^2(x)}dx$
+
+
 
