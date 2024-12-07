@@ -469,23 +469,21 @@ $f(x)$ 在区间 $I$ 连续，若 $\forall x1,x2\in I,\forall\alpha\in(0,1)$，�
 ### 基本积分表
 
 $$
-\begin{equation}
-  \begin{aligned}
+\begin{aligned}
     &\int\frac{dx}{x}=\ln|x|+C\\
     &\int\sec^2xdx=\tan x+C\\
     &\int\csc^2xdx=-\cot x+C\\
     &\int\sec xdx=\ln|\sec x+\tan x|+C\\
     &\int\csc xdx=\ln|\sec x-\cot x|+C\\
-  \end{aligned}
-  \quad\quad
-  \begin{aligned}
+\end{aligned}
+\quad\quad
+\begin{aligned}
     &\int\frac{dx}{x^2+a^2}=\frac{1}{a}\arctan\frac{x}{a}+C\quad(a\ne0)\\
     &\int\frac{dx}{x^2-a^2}=\frac{1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C\quad(a\ne0)\\
     &\int\frac{dx}{\sqrt{a^2-x^2}}=\arcsin\frac{x}{a}+C\quad(a>0)\\
     &\int\frac{dx}{\sqrt{x^2+a^2}}=\ln(x+\sqrt{x^2+a^2})+C\quad(a>0)\\
     &\int\frac{dx}{\sqrt{x^2-a^2}}=\ln|x+\sqrt{x^2-a^2}|+C\quad(a>0)\\
-  \end{aligned}
-\end{equation}
+\end{aligned}
 $$
 
 ### 求解不定积分
