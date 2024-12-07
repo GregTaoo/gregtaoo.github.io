@@ -461,3 +461,32 @@ $f(x)$ 在区间 $I$ 连续，若 $\forall x1,x2\in I,\forall\alpha\in(0,1)$，�
 
    曲线 $y=f(x)$ 有渐近线 $y=ax+b\quad\Leftrightarrow\quad a=\lim_{x\to\infty}\frac{f(x)}{x},b=\lim_{x\to\infty}[f(x)-ax]$
 
+### 不定积分
+
+1. 若函数 $f(x)$ 在区间 $I$ 上存在原函数，则 $(\int f(x)dx)'=f(x)\quad\Leftrightarrow\quad d(\int f(x)dx)=f(x)dx$
+2. 若函数 $f(x)$ 在区间 $I$ 上可导，则 $\int f'(x)dx=f(x)+C\quad\Leftrightarrow\quad\int df(x)=f(x)+C$
+
+### 基本积分表
+
+$$
+\begin{equation}
+  \begin{aligned}
+    &\int\frac{dx}{x}=\ln|x|+C\\
+    &\int\sec^2xdx=\tan x+C\\
+    &\int\csc^2xdx=-\cot x+C\\
+    &\int\sec xdx=\ln|\sec x+\tan x|+C\\
+    &\int\csc xdx=\ln|\sec x-\cot x|+C\\
+  \end{aligned}
+  \quad\quad
+  \begin{aligned}
+    &\int\frac{dx}{x^2+a^2}=\frac{1}{a}\arctan\frac{x}{a}+C\quad(a\ne0)\\
+    &\int\frac{dx}{x^2-a^2}=\frac{1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C\quad(a\ne0)\\
+    &\int\frac{dx}{\sqrt{a^2-x^2}}=\arcsin\frac{x}{a}+C\quad(a>0)\\
+    &\int\frac{dx}{\sqrt{x^2+a^2}}=\ln(x+\sqrt{x^2+a^2})+C\quad(a>0)\\
+    &\int\frac{dx}{\sqrt{x^2-a^2}}=\ln|x+\sqrt{x^2-a^2}|+C\quad(a>0)\\
+  \end{aligned}
+\end{equation}
+$$
+
+### 求解不定积分
+
