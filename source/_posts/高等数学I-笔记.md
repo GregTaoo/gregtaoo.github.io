@@ -531,5 +531,92 @@ $\Phi(x)=\int^x_af(t)dt$，$\Phi$ 连续且可导，且 $\Phi'(x)=f(x)$
 
 求弧长：$s=\int^b_a\sqrt{1+y'^2(x)}dx$
 
+### 数项级数
 
+若级数收敛到 $S$，则其相邻若干项加括号所得新级数仍收敛到 $S$（逆命题不成立，但可用逆否命题，若加括号后发散则原级数发散）
 
+级数收敛必要条件：$\lim_{n\to\infty}a_n=0$，常用若某级数一般项不趋于 $0$，则必发散
+
+课本例11.3. **调和级数** $\sum_{n=1}^\infty\frac{1}{n}$ 的敛散性（发散）
+
+若该级数收敛，则其部分和数列收敛，其子列 ${S_{2^n}}$ 也收敛，而 $S_{2^n}>1+\frac{1}{2}+{\frac{1}{4}+\frac{1}{4}}+\cdots=1+\frac{n}{2}\rightarrow+\infty$，故发散
+
+### 正项级数
+
+1. 正项级数收敛充要条件是其部分和数列有上界。例：讨论 $p$ 级数的敛散性（$p>1$ 收敛，$p\le1$ 发散，用积分）
+2. 比较判别法：若 $\exist N\in \mathbf{Z}^+,\forall n>N,a_n\le b_n$，则当 $b_n$ 级数收敛时 $a_n$ 级数也收敛，当 $a_n$ 级数发散时 $b_n$ 级数发散
+3. 比较判别法极限形式：$\lim_{n\to\infty}\frac{a_n}{b_n}=l$，当 $0<l<+\infty$ 时敛散性相同
+4. $p$-判别法：即比较某正项级数与 $p$ 级数
+5. 比值判别法：$\lim_{n\to\infty}\frac{a_{n+1}}{a_n}=l$，当 $0\le l<1$ 时级数收敛，当 $1<l\le+\infty$ 时级数发散，$l=1$ 需要另外判断
+6. 根值判别法：$\lim_{n\to\infty}\sqrt[n]{a_n}=l$，当 $0\le l<1$ 时级数收敛，当 $1<l\le+\infty$ 时级数发散，$l=1$ 需要另外判断
+7. 积分判别法：若非负函数 $f(x)$ 在 $[1,+\infty]$ 单调减少且有 $a_n=f(n)$，则级数与反常积分 $\int^{+\infty}_1f(x)dx$ 同敛散
+
+### 任意项级数
+
+交错级数 Leibniz 判别法：若交错级数 $\sum^\infty_{n=1}(-1)^{n-1}a_n$ 满足 $0<a_{n+1}\le a_n$ 且 $\lim_{n\to\infty}a_n=0$，则收敛
+
+任意项级数 $\sum^\infty_{n=1}a_n$，若 $\sum^\infty_{n=1}|a_n|$ 收敛则称为绝对收敛，则 $\sum^\infty_{n=1}a_n$ 必收敛
+
+任意项级数 $\sum^\infty_{n=1}a_n$，若 $\sum^\infty_{n=1}|a_n|$ 发散而 $\sum^\infty_{n=1}a_n$ 收敛，则成为条件收敛
+
+若任意项级数绝对收敛，则交换其各项的次序所得的新级数仍绝对收敛，且其和不变
+
+### 幂级数
+
+Abel 定理：对于幂级数 $\sum^\infty_{n=0}a_nx^n$，有以下结论：
+
+1. 若 $x=x_0\ne0$ 为收敛点，则 $|x|<|x_0|$ 时绝对收敛
+2. 若 $x=x_1$ 为发散点，则 $|x|>|x_1|$ 时发散
+
+推论：幂级数收敛域仅有三种可能情形（仅在 $x=0$ 收敛；在 $(-R,R)$ 收敛， $|x|>R$ 时发散；在 $(-\infty,+\infty)$ 收敛
+
+系数模比值法：对于幂级数若 $\lim_{n\to\infty}\frac{|a_{n+1}|}{|a_n|}=\rho$（或 $+\infty$），则收敛半径
+$$
+R=\left\{
+\begin{array}{l}
+0,&\rho=+\infty\\
+\frac{1}{\rho},&0<\rho<+\infty\\
++\infty,&\rho=0
+\end{array}
+\right.
+$$
+系数模根值法：对于幂级数若 $\lim_{n\to\infty}\sqrt[n]{|a_n|}=\rho$（或 $+\infty$），则收敛半径同上
+
+幂级数逐项可导、逐项可积：积分是从 $0$ 积到 $x$
+
+### 泰勒（Taylor）级数
+
+$$
+\begin{array}{ll}
+e^x=\sum^\infty_{n=0}\frac{x^n}{n!},&x\in(-\infty,+\infty)\\
+\ln(1+x)=\sum^\infty_{n=1}\frac{(-1)^{n-1}x^n}{n},&x\in(-1,1]\\
+\sin x=\sum^\infty_{n=0}(-1)^{n}\frac{x^{2n+1}}{(2n+1)!},&x\in(-\infty,+\infty)\\
+\cos x=\sum^\infty_{n=0}(-1)^{n}\frac{x^{2n}}{(2n)!},&x\in(-\infty,+\infty)\\
+(1+x)^\alpha=\sum^\infty_{n=0}\frac{\alpha(\alpha-1)\cdots(a-n+1)}{n!}x^n,&x\in(-1,1)
+\end{array}
+$$
+
+### 傅里叶（Fourier）级数
+
+三角级数：$\frac{a_0}{2}+\sum^\infty_{n=1}(a_n\cos nx+b_n\sin nx)$，三角函数系中任意两个不同函数乘积在 $[-\pi,\pi]$ 积分为 $0$（正交）
+
+Fourier 系数公式：$a_n=\frac{1}{\pi}\int^\pi_{-\pi}f(x)\cos nxdx,n=0,1,2,\cdots$；$b_n=\frac{1}{\pi}\int^\pi_{-\pi}f(x)\sin nxdx,n=1,2,\cdots$
+
+（将三角级数左右两端分别乘以 $\cos mx$ 或 $\sin mx$，利用正交性可得）
+
+Dirichlet 收敛定理：设周期为 $2\pi$ 的函数 $f(x)$ 在 $[-\pi,\pi]$ 上分段单调且至多有有限个第一类间断点，则 $f(x)$ 的傅里叶级数收敛，并且在 $[-\pi,\pi]$ 上，其和函数满足：
+$$
+S(x)=\left\{
+\begin{array}{l}
+f(x),&当x是f(x)连续点\\
+\frac{f(x-0)+f(x+0)}{2},&当x是f(x)间断点\\
+\frac{f(\pi-0)+f(-\pi+0)}{2},&当x=\pm\pi
+\end{array}
+\right.
+$$
+正弦级数、余弦级数：当 $f(x)$ 在 $[-\pi,\pi]$ 为奇函数/偶函数时，$a_n$ 或 $b_n$ 等于 $0$，即仅含正弦/余弦项
+
+周期为 $2l$ 的 Fourier 级数：$x=\frac{l}{\pi}t, F(t)=f(\frac{l}{\pi}t)$
+
+1. $a_n=\frac{1}{l}\int^l_{-l}f(x)\cos\frac{n\pi}{l}xdx,n=0,1,2,\cdots$；$b_n=\frac{1}{l}\int^l_{-l}f(x)\sin \frac{n\pi}{l}xdx,n=1,2,\cdots$
+2. $f(x)\sim\frac{a_0}{2}+\sum^\infty_{n=1}(a_n\cos\frac{n\pi}{l}x+b_n\sin\frac{n\pi}{l}x)$
