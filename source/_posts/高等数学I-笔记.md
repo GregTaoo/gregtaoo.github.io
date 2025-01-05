@@ -466,7 +466,20 @@ $f(x)$ 在区间 $I$ 连续，若 $\forall x1,x2\in I,\forall\alpha\in(0,1)$，�
 ### 不定积分
 
 1. 若函数 $f(x)$ 在区间 $I$ 上存在原函数，则 $(\int f(x)dx)'=f(x)\quad\Leftrightarrow\quad d(\int f(x)dx)=f(x)dx$
+
 2. 若函数 $f(x)$ 在区间 $I$ 上可导，则 $\int f'(x)dx=f(x)+C\quad\Leftrightarrow\quad\int df(x)=f(x)+C$
+
+3. 函数的导函数不一定可积；导函数的原函数无第一类间断点（跳跃/可去）
+
+4. 有理函数 $R(x)=\frac{P_n(x)}{Q_m(x)}$ 不定积分（$n\ge m$ 时为假分式，可化为一个多项式和一个真分式之和）
+
+   先把分母因式分解，用待定系数法求解每一个基本项
+
+   例书本 5.43：$\int\frac{x^5-x^3-2x^2+27x}{x^4-x^2-2x+2}dx$ 
+   $$
+   \frac{x^5-x^3-2x^2+27x}{x^4-x^2-2x+2}=x+\frac{25x}{(x-1)^2(x^2+2x+2)}=\frac{A_1}{x-1}+\frac{A_2}{(x-1)^2}+\frac{Bx+D}{x^2+2x+2}
+   $$
+   再解线性方程组求得系数，最后积分即可
 
 ### 基本积分表
 
@@ -493,12 +506,14 @@ $$
 1. 遇到根号时考虑三角换元，或用 $t$ 换掉根式
 2. 建立递推公式通常用分部积分
 3. 凑出分子是分母导数的项
-4. $\sin mx\cos nx$ 诸如此类考虑积化和差
+4. $\sin mx\cos nx$ 诸如此类考虑积化和差，含三角函数平方的考虑 $\tan x$，$\tan^2 x+1=\frac{1}{\cos^2 x}$，$\frac{1}{\tan^2 x}+1=\frac{1}{\sin^2 x}$
 5. 三角函数万能代换：$t=\tan\frac{x}{2}$
 
 ### 定积分
 
 保号性、保序性、乘积函数可积
+
+**注意判断积分区间内是否含有奇点（无界）**
 
 绝对值不等式：
 $$
@@ -517,6 +532,17 @@ $$
 \int^b_af(x)g(x)dx=f(\xi)\int^b_ag(x)dx
 $$
 
+沃利斯公式：
+$$
+\int^{\frac{\pi}{2}}_0\sin^n xdx=\int^{\frac{\pi}{2}}_0\cos^n xdx=\left\{
+\begin{array}{l}
+\frac{(n-1)!!}{n!!}\cdot\frac{\pi}{2},&n为偶数\\
+\frac{(n-1)!!}{n!!},&n为奇数
+\end{array}
+\right.
+$$
+三角函数规则：$0$ 到 $\frac{\pi}{2}$ 积分时 $\sin x$ 可与 $\cos x$ 互换；多考虑**周期性**，如换元 $x=\pi-t$ 等
+
 ### 变上限积分函数
 
 $\Phi(x)=\int^x_af(t)dt$，$\Phi$ 连续且可导，且 $\Phi'(x)=f(x)$
@@ -529,7 +555,7 @@ $\Phi(x)=\int^x_af(t)dt$，$\Phi$ 连续且可导，且 $\Phi'(x)=f(x)$
 
 求体积：薄片法，薄壳法（$\Delta V\approx[\pi(x+dx)^2-\pi x^2]f(x)=\pi f(x)[2xdx+(dx)^2]$，故微元 $dV=2\pi xf(x)dx$
 
-求弧长：$s=\int^b_a\sqrt{1+y'^2(x)}dx$
+求弧长：$ds=\sqrt{(dx)^2+(dy)^2}$, $s=\int^b_a\sqrt{1+y'^2(x)}dx=\int^b_a\sqrt{x'^2(t)+y'^2(t)}dt=\int^b_a\sqrt{r^2(\theta)+r'^2(\theta)}d\theta$
 
 ### 数项级数
 
@@ -584,9 +610,7 @@ $$
 
 幂级数逐项可导、逐项可积：积分是从 $0$ 积到 $x$
 
-$(2n)!!=2^nn!$
-
-$\frac{1}{(n+1)^2}=(-\frac{1}{n+1})'$
+重要等式：$(2n)!!=2^nn!，\frac{1}{(n+1)^2}=(-\frac{1}{n+1})'$
 
 ### 泰勒（Taylor）级数
 
