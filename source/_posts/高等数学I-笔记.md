@@ -543,6 +543,8 @@ $$
 $$
 三角函数规则：$0$ 到 $\frac{\pi}{2}$ 积分时 $\sin x$ 可与 $\cos x$ 互换；多考虑**周期性**，如换元 $x=\pi-t$ 等
 
+区间再现：$\int^b_af(x)dx=\int^b_af(a+b-x)dx=\frac{1}{2}\int^b_a[f(x)+f(a+b-x)]dx$
+
 ### 变上限积分函数
 
 $\Phi(x)=\int^x_af(t)dt$，$\Phi$ 连续且可导，且 $\Phi'(x)=f(x)$
