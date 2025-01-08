@@ -6,9 +6,8 @@ tags:
 
 ### 矩阵
 
-$(AB)^{-1}=B^{-1}A^{-1}$
-
-$(AB)^\top=B^\top A^\top$
+1. $(AB)^{-1}=B^{-1}A^{-1}$，$(AB)^\top=B^\top A^\top$
+2. $AB$ 可逆则 $A,B$ 均可逆，则 $BA$ 可逆；反之若 $AB$ 不可逆，则 $BA$ 不可逆
 
 ### 矩阵可逆的等价说法
 
@@ -81,8 +80,8 @@ $\vec{u}\times\vec{v}=-\vec{v}\times\vec{u},\vec{u}\times\vec{u}=0$
 1. 秩-零化度定理：$rank(A)+nullity(A)=n$ ($A$ 列数，即 $A\vec{x}$ 中 $\vec{x}$ 维数)
 2. $W\subset\mathbb{R}^n$ 为一个子空间，则 $\dim(W)+\dim(W^\perp)=n$
 3. $A\in M_{m\times n},B\in M_{n\times k}$，且 $AB=0_{m\times k}$，则 $Col(B)\subset Null(A), rank(B)\le nullity(A)$
-4. $A\in M_{m\times n},B\in M_{n\times k}$，必然有 $rank(AB)\le rank(A)$
-5. $A\in M_{m\times n}$，都有 $rank(A^\top A)=rank(A)$
+4. $A\in M_{m\times n},B\in M_{n\times k}$，必然有 $rank(AB)\le rank(A)$，$rank(A+B)\le rank(A)+rank(B)$
+5. $A\in M_{m\times n}$，都有 $rank(A^\top A)=rank(A)$，$Null(A)\subset Null(A^TA)$，$R(A^TA)\subset R(A)$
 
 ### 矩阵变换
 
@@ -98,6 +97,7 @@ $\vec{u}\times\vec{v}=-\vec{v}\times\vec{u},\vec{u}\times\vec{u}=0$
 2. $rank(T)+nullity(T)=\dim(V)$
 3. 一个双射的线性变换 $T:V\rightarrow W$ 是一个同构 (Isomorphism)，$V$ 与 $W$ 是同构的 (V is isomorphic to W)
 4. 任何 $n$ 维的向量空间 $V$ 都与欧氏空间 $\mathbb{R}^n$ 同构
+5. 若一个线性变换存在逆变换，则必为同构
 
 ### 相似矩阵
 
