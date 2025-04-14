@@ -91,6 +91,40 @@ $$
 ### 常系数线性齐次微分方程
 
 
+### 二元泰勒公式
 
+- 二元泰勒公式
+$$
+f(x_0+\Delta x,y_0+\Delta y)=\sum_{k=0}^n \frac{1}{k!}\left( \Delta x \frac{\partial}{\partial x} + \Delta y \frac{\partial}{\partial y} \right)^k f(x_{0},y_{0})+R_{n}
+$$
+- 拉格朗日型余项：$$
+R_{n}=\frac{1}{(n+1)!}\left( \Delta x \frac{\partial}{\partial x} + \Delta y \frac{\partial}{\partial y} \right)^{n+1} f(x_{0}+\theta\Delta x,y_{0}+\theta\Delta y),0<\theta<1
+$$
+- 拉格朗日中值定理（取 $n=0$）：
+$$
+f(x_{0}+\Delta x,y_{0}+\Delta y)-f(x_{0},y_{0})=f_{x}(x_{0}+\theta\Delta x,y_{0}+\theta\Delta y)\Delta x+f_{y}\Delta y,0<\theta<1
+$$
+- Peano 型余项
+$$
+R_{n}=o(\phi^n),\phi=\sqrt{ (\Delta x)^2+(\Delta y)^2 }
+$$
+- Maclaurin 公式（取 $x_0=0,y_0=0$）
+$$
+f(x,y)=\sum_{k=0}^n \frac{1}{k!}\left( \Delta x \frac{\partial}{\partial x} + \Delta y \frac{\partial}{\partial y} \right)^k f(0,0)+\frac{1}{(n+1)!}\left( \Delta x \frac{\partial}{\partial x} + \Delta y \frac{\partial}{\partial y} \right)^{n+1} f(\theta x,\theta y),0<\theta<1
+$$
+- 二阶泰勒公式
+$$
+\begin{align*}
+f(x, y) \approx\ & f(a, b) 
++ f_x(a, b)(x - a) + f_y(a, b)(y - b) \\
+& + \frac{1}{2}f_{xx}(a, b)(x - a)^2 
++ f_{xy}(a, b)(x - a)(y - b) 
++ \frac{1}{2}f_{yy}(a, b)(y - b)^2
+\end{align*}
+$$
 
+### 二元函数极值
 
+- 二元函数极值必要条件：$f_x(x_0,y_0)=f_y(x_0,y_0)=0$（驻点），极值点存在于驻点或至少有一个偏导数不存在的点中
+- 二元函数极值充分条件：若二元函数在某领域有二阶连续偏导数，且 $P_0(x_0,y_0)$ 为驻点，记 $A=f_{xx}(x_0,y_0),B=f_{xy},C=f_{yx},D=f_{yy}$，且 $H=AC-B^2$，则： 当 $H>0$ 时 $f(x_0,y_0)$ 为极值，若 $A>0$ 为极小值，若 $A<0$ 为极大值；当 $H<0$ 时不是极值
+- 条件极值/拉格朗日乘数法：在 $\phi=0$ 的约束下求 $f$ 极值，引进函数 $F(x,y,z,\lambda)=f+\lambda g$，求解方程组 $F_x=F_y=F_z=F_\lambda=\phi=0$
