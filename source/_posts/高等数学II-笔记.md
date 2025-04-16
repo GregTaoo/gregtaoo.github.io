@@ -7,13 +7,10 @@ tags:
 ### 一阶微分方程
 
 1. 可分离变量：$x,dx$ 移到一边，$y,dy$ 移到另一边，两边同时积分
-
 2. 齐次微分方程：微分方程 $y'=f(x,y)$ 可表示为 $y'=g(\frac{y}{x})$，令 $u=\frac{y}{x}$，先求出关于 $u$ 的解再代入
-
 3. $y'=f(ax+by+c)$ （其中 $b\ne0$）：令 $u=ax+by+c$，则 $y'=\frac{1}{b}(\frac{du}{dx}-a)$，代入原方程
-
 4. $y'=f(\frac{a_1x+b_1y+c_1}{a_2x+b_2y+c_2})$：可先尝试化简，否则采取如下变量代换，先解出 $x_0,y_0$，再带入右侧
-   $$
+$$
    \left\{
    \begin{array}{ll}
    a_1x+b_1y+c_1=0,\\
@@ -32,7 +29,7 @@ tags:
 
 即 $y'+P(x)y=Q(x)$，先求得齐次解 $y=Ce^{-\int P(x)dx}$，将 $C$ 看作 $C(x)$，代入原方程求解得 $C(x)$，然后得通解：
 $$
-y=e^{-\int P(x)dx}(\int Q(x)e^{\int P(x)dx}dx+C)
+y=e^{-\int P(x)dx}\left(\int Q(x)e^{\int P(x)dx}dx+C\right)
 $$
 上述方法为**常数变易法**
 
@@ -205,10 +202,47 @@ $$
 - 曲线一般式方程，参数方程：即两个相交曲面方程联立
 - 曲线在坐标平面的投影：分别变换消去 $x,y,z$ 即可
 
-### 偏导数
+### 偏导数/全微分
 
 - $f_{xy}=\frac{\partial^2f}{\partial x\partial y}=\frac{\partial}{\partial y}\left( \frac{\partial f}{\partial x} \right)$
+- 全微分：$\mathrm{d}f = f_x\, \mathrm{d}x + f_y\, \mathrm{d}y$
+- 偏导数连续 $\Rightarrow$ 可微 $\Rightarrow$ 连续 & 可偏导
+- 全微分近似计算：$f(x,y)\approx f(x_{0},y_{0})+f_{x}(x_{0},y_{0})(x-x_{0})+f_{y}(x_{0},y_{0})(y-y_{0})$
 
+### 隐函数的偏导数
+
+- 隐函数存在定理：$F(x,y)$ 在 $(x_0,y_0)$ 邻域内具有连续偏导数，且 $F(x_0,y_0)=0,F_y(x_0,y_0)\ne0$，则可确定唯一的 $y=y(x)$，且 $\frac{dy}{dx}=\frac{\partial y}{\partial x}=-\frac{F_{x}}{F_{y}}$
+- 若隐函数以方程组 $F(x_0,y_0,u_0,v_0)=0,G(x_0,y_0,u_0,v_0)=0$ 确定，则有行列式
+$$
+J=\frac{\partial(F,G)}{\partial(u,v)}=
+\begin{vmatrix}
+\frac{ \partial F }{ \partial u } & \frac{ \partial F }{ \partial v }  \\
+\frac{ \partial G }{ \partial u }  & \frac{ \partial G }{ \partial v } 
+\end{vmatrix}
+$$
+- 若该 Jacobi 行列式在 $(x_0,y_0,u_0,v_0)$ 处不等于 $0$，则可确定唯一一组 $u=u(x,y),v=v(x,y)$，且有连续偏导数：
+$$
+\begin{aligned}
+u_x &= -\frac{1}{J} \cdot \frac{\partial(F, G)}{\partial(x, v)} \quad
+v_x = -\frac{1}{J} \cdot \frac{\partial(F, G)}{\partial(u, x)} \\
+u_y &= -\frac{1}{J} \cdot \frac{\partial(F, G)}{\partial(y, v)} \quad
+v_y = -\frac{1}{J} \cdot \frac{\partial(F, G)}{\partial(u, y)}
+\end{aligned}
+$$
+
+### 方向导数/梯度
+
+- 方向导数：将方向向量单位化 $\vec{l^0}$，则 $\frac{ \partial u }{ \partial l }|_{M_{0}}=(u_{x},u_{y})\cdot\vec{l^0}$
+- 梯度：$\text{grad }f=\nabla f=(f_{x},f_{y})$，$\nabla$ 为哈密顿算子
+
+### 切线/切平面/法线/法平面
+
+- 参数方程求切向量：$\vec{\tau}=(x'(t_{0}),y'(t_{0}),z'(t_{0}))$
+- 两个隐函数：左右同时微分，代入点 $M_0$，得 $k(dx,dy,dz)$ 即切向量
+- 光滑曲线：在每一个点有切线且切向量 $(x'(t),y'(t),z'(t))$ 连续变化
+- 切平面：取法向量 $\vec{n}=\nabla F(M_{0})=(F_{x},F_{y},F_{z})$
+- 光滑曲面：对曲面 $F(x,y,z)=0$，$F$ 有连续偏导数且 $F_x^2+F_y^2+F_z^2\ne0$，那么每点都有切平面，且法向量连续变化
+- 两个曲面交线切向量：求两个曲面的法向量，再叉乘
 
 ### 二元泰勒公式
 
@@ -216,7 +250,8 @@ $$
 $$
 f(x_0+\Delta x,y_0+\Delta y)=\sum_{k=0}^n \frac{1}{k!}\left( \Delta x \frac{\partial}{\partial x} + \Delta y \frac{\partial}{\partial y} \right)^k f(x_{0},y_{0})+R_{n}
 $$
-- 拉格朗日型余项：$$
+- 拉格朗日型余项：
+$$
 R_{n}=\frac{1}{(n+1)!}\left( \Delta x \frac{\partial}{\partial x} + \Delta y \frac{\partial}{\partial y} \right)^{n+1} f(x_{0}+\theta\Delta x,y_{0}+\theta\Delta y),0<\theta<1
 $$
 - 拉格朗日中值定理（取 $n=0$）：
