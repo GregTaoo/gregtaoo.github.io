@@ -30,7 +30,7 @@ tags:
 
 ### 一阶线性微分方程
 
-即 $y'+P(x)y=Q(x)$，先求得齐次解 $y=Ce^{-\int P(x)dx}$，将 $C$ 看作 $C(x)$，代入原方程求解得通解：
+即 $y'+P(x)y=Q(x)$，先求得齐次解 $y=Ce^{-\int P(x)dx}$，将 $C$ 看作 $C(x)$，代入原方程求解得 $C(x)$，然后得通解：
 $$
 y=e^{-\int P(x)dx}(\int Q(x)e^{\int P(x)dx}dx+C)
 $$
@@ -67,7 +67,7 @@ y^{(n)}(x) + p_1(x)y^{(n-1)}(x) + \cdots + p_{n-1}(x)y' + p_n(x)y(x) = 0
 $$
 的解，则 $C_1y_1(x)+C_2y_2(x)$ 也是该方程的解
 
-### Liouville 刘维尔公式（HL）
+### 二阶线性齐次方程/刘维尔公式（HL）
 
 若 $y_1(x)$ 是方程 $y''+p(x)y'+q(x)y=0$ （HL）的非零解，则另一个线性无关解为：
 $$
@@ -88,7 +88,126 @@ $$
 
 **可推广到 $n$ 阶线性（齐次）微分方程**
 
-### 常系数线性齐次微分方程
+### 常系数线性齐次方程
+
+如 $y''+py'+qy=0$，猜测其可化为 $(r^2+pr+q)e^{rx}=0$，得特征方程 $r^2+pr+q=0$ 再解得特征根，即可求得：
+1. $r_1\ne r_2,r_{1},r_{2}\in\mathbb{R}$：通解为 $y=C_1e^{r_1x}+C_2e^{r_2x}$ 
+2. $r_1=r_2,r_{1},r_{2}\in\mathbb{R}$：用刘维尔公式求得 $y=C_1e^{rx}+C_2xe^{rx}$
+3. $r_1=\alpha+i\beta,r_{2}=\alpha-i\beta$：用欧拉公式得 $y=C_1e^{\alpha x}\cos\beta x+C_{2}e^{\alpha x}\sin\beta x$
+
+推广到 $y^{(n)}+p_{1}y^{(n-1)}+\cdots+p_{n-1}y'+p_{n}=0$：
+1. 单实根：$e^{rx}$
+2. $k$ 重实根：$e^{rx},xe^{rx},\cdots,x^{k-1}e^{rx}$
+3. 单重共轭复根：$e^{\alpha x}\cos\beta x,e^{\alpha x}\sin\beta x$
+4. $k$ 重共轭复根：$e^{\alpha x}\cos\beta x,e^{\alpha x}\sin\beta x,\cdots,x^{k-1}e^{\alpha x}\cos\beta x,x^{k-1}e^{\alpha x}\sin\beta x$
+
+### 常系数线性非齐次方程
+
+二阶基本形式：$y''+py'+qy=f(x)$，$f(x)$ 为连续函数，考虑其不同形式：
+- $f(x)=(b_0x^m+b_1x^{m-1}+\cdots+b_{m-1}x+b_m)e^{\lambda x}$：特解为 $y^*=x^k(B_{0}x^m+B_{1}x^{m-1}+\cdots+B_{m-1}x+B_{m})e^{\lambda x}$，其中 $k$ 为 $\lambda$ 作为特征方程的根的重数
+- $f(x)=[P(x)\cos\beta x+Q(x)\sin\beta x]e^{\alpha x}=\frac{1}{2}e^{\alpha x-i\beta x}[P(x)+iQ(x)]$：特解为 $y^*=x^k[A(x)\cos\beta x+B(x)\sin\beta x]e^{\alpha x}$，其中 $k$ 是 $\alpha+i\beta$ 作为特征方程的根的重数，$P(x),Q(x)$ 最高次数为 $m$，$A(x),B(x)$ 均为 $m$ 次待定多项式
+
+### 欧拉方程
+
+二阶欧拉方程：$x^2y''+pxy'+qy=0$，设 $x=e^t,y=y(t)$，带入求得 $y$ 与 $t$ 的二阶常系数线性方程：$\frac{d^2y}{dt^2}+(p-1) \frac{dy}{dt}+qy=0$，引入记号 $D=\frac{d}{dt}$，则化为：
+$$
+[D(D-1)+pD+q]y=0
+$$
+其特征方程为 $r(r-1)+pr+q=0$，易解出原方程通解
+
+### 微分方程数值解
+
+略
+
+### 向量
+
+- $|\vec{a}\times \vec{b}|=|\vec{a}|\cdot|\vec{b}|\cdot \sin(\widehat{\vec{a},\vec{b}})$
+- 混合积（围成体积）
+$$
+[\vec{a},\vec{b},\vec{c}]=\begin{vmatrix}
+a_{1} & a_{2} & a_{3} \\
+b_{1} & b_{2} & b_{3} \\
+c_{1} & c_{2} & c_{3}
+\end{vmatrix}
+$$
+- 空间四点共面充要条件即体积为 $0$
+
+### 空间平面
+
+- 点法式：$A(x-x_0)+B(y-y_0)+C(z-z_0)=0$，法向量 $\vec{n}=(A,B,C)$
+- 一般式：$Ax+By+Cz+D=0$
+- 截距式：$\frac{x}{a}+\frac{y}{b}+\frac{z}{c}=1$，$a,b,c$ 分别在 $x,y,z$ 轴截距
+- 标准式：$\vec{u},\vec{v}$ 在平面上不共线
+$$
+\begin{vmatrix}
+x-x_{0} & y-y_{0} & z-z_{0} \\
+u_{1} & u_{2} & u_{3} \\
+v_{1} & v_{2} & v_{3}
+\end{vmatrix}
+=0
+$$
+- 三点式：平面上三个不共线的点
+$$
+\begin{vmatrix}
+x-x_{1} & y-y_{1} & z-z_{1} \\
+x_{2}-x_{1} & y_{2}-y_{1} & z_{2}-z_{1} \\
+x_{3}-x_{1} & y_{3}-y_{1} & z_{3}-z_{1}
+\end{vmatrix}
+=0
+$$
+
+### 空间直线
+
+- 参数式：$\vec{s}=(m,n,p)$ 为方向向量
+$$
+\begin{cases}
+x=x_{0}+tm \\
+y=y_{0}+tn \\
+z=z_{0}+tp
+\end{cases}
+\quad t\in\mathbb{R}
+$$
+- 标准式/点向式：$\frac{x-x_{0}}{m}=\frac{y-y_{0}}{n}=\frac{z-z_{0}}{p}$
+- 两点式：$\frac{x-x_{1}}{x_{2}-x_{1}}=\frac{y-y_{1}}{y_{2}-y_{1}}=\frac{z-z_{1}}{z_{2}-z_{1}}$
+- 一般式：
+$$
+\begin{cases}
+A_{1}x+B_{1}y+C_{1}z+D_{1}=0 \\
+A_{2}x+B_{2}y+C_{2}z+D_{2}=0
+\end{cases}
+\quad
+(A_{1}:B_{1}:C_{1}\ne A_{2}:B_{2}:C_{2})
+$$
+- 点 $P$ 到直线距离公式：直线方向向量 $\vec{s}$，取直线上一点 $M$，则距离
+$$
+d=\frac{|\overrightarrow{MP}\times \vec{s}|}{|\vec{s}|}
+$$
+- 验证两条直线异面：分别取两点，然后 $[\overrightarrow{M_1M_2},\vec{s_{1}},\vec{s_{2}}]=0$
+- 求两条直线 $l_{1},l_{2}$ 公垂线 $l$：设 $l_{1},l$ 平面为 $\pi_{1}$，$l_{2},l$ 平面为 $\pi_{2}$，则公垂线为：
+$$
+\begin{cases}
+[\overrightarrow{M_{1}M},\vec{s_{1}},\vec{s_{1}}\times\vec{s_{2}}]=0 \\
+[\overrightarrow{M_{2}M},\vec{s_{2}},\vec{s_{1}}\times\vec{s_{2}}]=0 
+\end{cases}
+$$
+### 曲面/曲线
+
+- 椭球面：$\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$ $(a>0,b>0,c>0)$，其中 $a,b,c$ 称为半轴
+- 单叶双曲面：$\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1$ $(a>0,b>0,c>0)$
+- 双叶双曲面：$-\frac{x^2}{a^2}-\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$ $(a>0,b>0,c>0)$
+- 椭圆抛物面：$\frac{x^2}{a^2}+\frac{y^2}{b^2}=z$ $(a>0,b>0)$，与对称轴交点称为顶点
+- 双曲抛物面：$\frac{x^2}{a^2}-\frac{y^2}{b^2}=z$ $(a>0,b>0)$
+- 柱面：母线沿准线移动形成的面
+- 旋转面：曲线 $C$ （子午线）绕定直线（对称轴）旋转一周的曲面
+- 锥面：准线中间固定在顶点，另一段沿母线移动形成锥面
+- 曲面可表示为双参数方程
+
+- 曲线一般式方程，参数方程：即两个相交曲面方程联立
+- 曲线在坐标平面的投影：分别变换消去 $x,y,z$ 即可
+
+### 偏导数
+
+- $f_{xy}=\frac{\partial^2f}{\partial x\partial y}=\frac{\partial}{\partial y}\left( \frac{\partial f}{\partial x} \right)$
 
 
 ### 二元泰勒公式
