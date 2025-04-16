@@ -8,12 +8,12 @@ tags:
 
 差集：$A \setminus B = \{x \in A | x \notin B\}$；直积：$A \times B = \{(a,b) | a \in A, b \in B\}$
 
-对任意给定的 (for any given) : $\forall$；存在 (exist) : $\exist$；存在唯一 : $\exists!$
+对任意给定的 (for any given) : $\forall$；存在 (exist) : $\exists$；存在唯一 : $\exists!$
 
 否定：
 $$
-\exist country,\forall city\in country,\exist month,\forall day\in month,Always\ rains\\
-\forall country,\exist city\in country,\forall month,\exist day\in month,Never\ rains
+\exists country,\forall city\in country,\exists month,\forall day\in month,Always\ rains\\
+\forall country,\exists city\in country,\forall month,\exists day\in month,Never\ rains
 $$
 对于命题: $P\Rightarrow Q$; 逆命题: $Q\Rightarrow P$, $\neg P\Rightarrow \neg Q$; 逆否命题: $(P\Rightarrow Q)\Leftrightarrow(\neg Q\Rightarrow \neg P)$
 
@@ -47,7 +47,7 @@ Bernoulli 不等式: $(1+x)^n\geq 1+nx$, 证明：直接展开或数学归纳法
 
 单射 (injection): $\forall a,b\in A,a\neq b\Rightarrow f(a)\neq f(b)$
 
-满射 (surjection): $\forall y\in B,\exist x\in A, f(x)=y$
+满射 (surjection): $\forall y\in B,\exists x\in A, f(x)=y$
 
 双射 (bijection): 满足单射、满射
 
@@ -81,7 +81,7 @@ $$
 
 ### 数列极限
 
-对数列 $\{x_n\}$, 若存在数 $A$, $\forall \epsilon>0,\exist N\in\mathbf{N}, \forall n>N$, 有 $|x_n-A|<\epsilon$, 则数列 $\{x_n\}$ 收敛于$A$ 
+对数列 $\{x_n\}$, 若存在数 $A$, $\forall \epsilon>0,\exists N\in\mathbf{N}, \forall n>N$, 有 $|x_n-A|<\epsilon$, 则数列 $\{x_n\}$ 收敛于$A$ 
 
 若$A$不存在，则称数列$\{x_n\}$发散/不收敛
 
@@ -128,9 +128,9 @@ $$
 
 ### 函数极限
 
-$f(x)$ 在 $\mathring{U}(a)$ 内有定义，若存在 $A\in\mathbb{R},\forall\epsilon>0,\exist\delta>0$，使得当 $0<|x-a|<\delta$ 时，$|f(x)-A|<\epsilon$，则$\lim_{x\to a}f(x)=A$
+$f(x)$ 在 $\mathring{U}(a)$ 内有定义，若存在 $A\in\mathbb{R},\forall\epsilon>0,\exists\delta>0$，使得当 $0<|x-a|<\delta$ 时，$|f(x)-A|<\epsilon$，则$\lim_{x\to a}f(x)=A$
 
-$f(x)$ 在 $(-\infty,-a)\cup(a,+\infty)(a>0)$ 内有定义，若存在 $A\in\mathbb{R},\forall\epsilon>0,\exist X>0(X>a)$，使得当 $|x|>X$ 时，$|f(x)-A|<\epsilon$，则 $\lim_{x\to\infty}f(x)=A$
+$f(x)$ 在 $(-\infty,-a)\cup(a,+\infty)(a>0)$ 内有定义，若存在 $A\in\mathbb{R},\forall\epsilon>0,\exists X>0(X>a)$，使得当 $|x|>X$ 时，$|f(x)-A|<\epsilon$，则 $\lim_{x\to\infty}f(x)=A$
 
 TIP：欲证明 $\lim_{x\to x_0}f(x)=L$，通过 $f(x)-L$ 构造 $x-x_0$，以 $\epsilon$ 表示 $\delta$；先限定 $\delta<1$，再得到 $|x-A|<\delta<1$，得到 $x$ 范围，再进行放缩。最后注意例如：$\delta=\min\{3\epsilon,1\}$
 
@@ -159,7 +159,7 @@ $\lim_{u\to b}f(u)=A, \lim_{x\to a}\varphi(x)=b$，且当 $x\in \mathring{U}(a)$
 
 某函数在a处极限为0，则称该函数在趋向于0时为无穷小量：$f(x)=o(1)$
 
-若 $\forall G>0,\exist\delta>0$ 当 $0<|x-a|<\delta$ 时，有 $|f(x)|>G$，则称无穷大量（极限为无穷）
+若 $\forall G>0,\exists\delta>0$ 当 $0<|x-a|<\delta$ 时，有 $|f(x)|>G$，则称无穷大量（极限为无穷）
 
 设 $\lim_{x\to a}\alpha(x)=0,\lim_{x\to a}\beta(x)=0,lim_{x\to a}\frac{\beta(x)}{\alpha(x)}=l\in\mathbf{R}$
 
@@ -169,7 +169,7 @@ $l\ne0$ 则 $x\rightarrow a$ 时 $\beta(x)$ 是与 $\alpha(x)$ 同阶无穷小�
 
 $l=1$ 则 $x\rightarrow a$ 时 $\beta(x)$ 是与 $\alpha(x)$ 等价无穷小，记为 $\beta(x)\sim\alpha(x)(x\rightarrow a)$
 
-$\exist c\ne 0,k>0, \lim_{x\to a}\frac{\alpha(x)}{(x-a)^k}=c$，则称 $\alpha(x)$ 是**标准无穷小** $x-a$ 的 $k$ 阶无穷小，且 $c(x-a)^k$ 为**主部**
+$\exists c\ne 0,k>0, \lim_{x\to a}\frac{\alpha(x)}{(x-a)^k}=c$，则称 $\alpha(x)$ 是**标准无穷小** $x-a$ 的 $k$ 阶无穷小，且 $c(x-a)^k$ 为**主部**
 
 可表示为 $\alpha(x)=c(x-a)^k+o((x-a)^k)$，一般判断直接选取次数最小/大的整个项即可
 
@@ -206,11 +206,11 @@ $$
 最大值最小值定理：
 
 - 由确界存在定理得有上下确界，设上确界为 $M$，反证法设 $f(x)$ 在 $[a,b]$ 都取不到 $M$
-- 若构造 $\epsilon>0$ 使得 $f(x)\leq M-\epsilon$，即 $0<\epsilon\leq M-f(x)$（如果 $M-f(x)$ 可取到0，则 $\epsilon$ 不存在），则可证明与上确界矛盾。因此若 $f(x)$ 在 $[a,b]$ 都取不到 $M$, 则 $g(x)=\frac{1}{M-f(x)}$ 在 $[a,b]$ 连续，由于 $f$ 有界，则 $g$ 也有界，$\exist C>0, g(x)\leq C$，可取 $\epsilon=\frac{1}{C}$，与 $M$ 是上确界矛盾。因此 $\epsilon,g(x)$ 不存在。得证。
+- 若构造 $\epsilon>0$ 使得 $f(x)\leq M-\epsilon$，即 $0<\epsilon\leq M-f(x)$（如果 $M-f(x)$ 可取到0，则 $\epsilon$ 不存在），则可证明与上确界矛盾。因此若 $f(x)$ 在 $[a,b]$ 都取不到 $M$, 则 $g(x)=\frac{1}{M-f(x)}$ 在 $[a,b]$ 连续，由于 $f$ 有界，则 $g$ 也有界，$\exists C>0, g(x)\leq C$，可取 $\epsilon=\frac{1}{C}$，与 $M$ 是上确界矛盾。因此 $\epsilon,g(x)$ 不存在。得证。
 
 介值定理（零点存在定理）：
 
-- 若 $f(x)\in C[a,b]$，且 $f(a)\ne f(b)$，则 $\forall c\in[f(a),f(b)], \exist\xi\in[a,b], f(\xi)=c$
+- 若 $f(x)\in C[a,b]$，且 $f(a)\ne f(b)$，则 $\forall c\in[f(a),f(b)], \exists\xi\in[a,b], f(\xi)=c$
 
 - 构造函数 $F(x)=f(x)-c$，由零点存在定理可证
 
@@ -303,19 +303,19 @@ $$
 
 ### Rolle 罗尔定理
 
-$f(x)\in C[a,b]\cap D(a,b),f(a)=f(b)$，则 $\exist\xi\in(a,b),f'(\xi)=0$
+$f(x)\in C[a,b]\cap D(a,b),f(a)=f(b)$，则 $\exists\xi\in(a,b),f'(\xi)=0$
 
 推论：若在 $(a,b)$ 内 $f'(x)\ne0$，则在闭区间 $[a,b]$ 上为单射函数，从而有反函数
 
-广义罗尔定理1：若 $f(x)\in D(a,b),\lim_{x\to a^+}f(x)=\lim_{x\to b^-}f(x),\exist\xi\in(a,b),f'(\xi)=0$
+广义罗尔定理1：若 $f(x)\in D(a,b),\lim_{x\to a^+}f(x)=\lim_{x\to b^-}f(x),\exists\xi\in(a,b),f'(\xi)=0$
 
 证明：补充定义 $x=a$ 和 $x=b$，则 $f(x)\in C[a,b]\cap D(a,b)$，再用罗尔定理可证
 
 广义罗尔定理2：若 $\lim_{x\to a^+}f(x)=\lim_{x\to b^-}f(x)=+\infty(-\infty)$
 
-证明：先证 $+\infty$，取 $x_0\in(a,b),M>f(x_0)$，根据介值定理，$\exist\xi_1\in(a,x_0),f(\xi_1)=M,\exist\xi_2\in(x_0,b),f(\xi_2)=M$，再根据罗尔定理可证
+证明：先证 $+\infty$，取 $x_0\in(a,b),M>f(x_0)$，根据介值定理，$\exists\xi_1\in(a,x_0),f(\xi_1)=M,\exists\xi_2\in(x_0,b),f(\xi_2)=M$，再根据罗尔定理可证
 
-广义罗尔定理3：若 $f(x)\in(a,+\infty),\lim_{x\to a^+}f(x)=\lim_{x\to+\infty}f(x)=A,\exist\xi\in(a,+\infty),f'(\xi)=0$
+广义罗尔定理3：若 $f(x)\in(a,+\infty),\lim_{x\to a^+}f(x)=\lim_{x\to+\infty}f(x)=A,\exists\xi\in(a,+\infty),f'(\xi)=0$
 
 证明1（待完善）：存在 $x_0$，分别讨论 $f(x)=A,f(x_0)>A,f(x_0)<A$，考虑 $f(x_0)>A$ 根据极限保号性，有 $0<\delta<\frac{x_0-a}{2},M>x_0$（$a+\delta<x_0<M$，但是似乎 $\delta$ 取值范围可以是除以大于1的数）$f(x)<\frac{f(x_0)+A}{2}<f(x_0)$（局部保号，为了证明该式，取 $\epsilon=\frac{f(x_0)-A}{2}>0$，由 $|f(x)-A|<\epsilon$ 推得）$x\in(a,a+\delta]\cup[M,+\infty)$，则 $f(x_0)>f(a+\delta),f(x_0)>f(M)$，故最大值在 $(a+\delta,M)$ 取得，根据费马定理可取得
 
@@ -331,7 +331,7 @@ $$
 
 ### Lagrange 拉格朗日定理
 
-$f(x)\in C[a,b]\cap D(a,b)$，则 $\exist\xi\in(a,b),f'(\xi)=\frac{f(b)-f(a)}{b-a}$
+$f(x)\in C[a,b]\cap D(a,b)$，则 $\exists\xi\in(a,b),f'(\xi)=\frac{f(b)-f(a)}{b-a}$
 
 或表示为拉格朗日中值公式：$f(b)-f(a)=f'(\xi)(b-a)$
 
@@ -345,7 +345,7 @@ $f(x)\in C[a,b]\cap D(a,b)$，则 $\exist\xi\in(a,b),f'(\xi)=\frac{f(b)-f(a)}{b-
 
 ### Cauchy 柯西定理
 
-$f(x)\in C[a,b]\cap D(a,b),\forall x\in(a,b),g'(x)\ne0,\exist\xi\in(a,b)$，使得
+$f(x)\in C[a,b]\cap D(a,b),\forall x\in(a,b),g'(x)\ne0,\exists\xi\in(a,b)$，使得
 $$
 \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(\xi)}{g'(\xi)}
 $$
@@ -357,7 +357,7 @@ $$
 
 当函数 $f(x)$ 是某函数在闭区间 $[a,b]$ 上的导函数时，即使不连续也仍具有介值性
 
-证明：先证零点存在，由于原函数可导故连续，可取得最小值 $m$，因 $f'(a)<0$，由保号性，$\exist\delta>0,x\in(a,a+\delta),\frac{f(x)-f(a)}{x-a}<0$，因此 $f(a)>m$，由费马定理推论得 $f'(\xi)=0$；然后构造函数证明之。
+证明：先证零点存在，由于原函数可导故连续，可取得最小值 $m$，因 $f'(a)<0$，由保号性，$\exists\delta>0,x\in(a,a+\delta),\frac{f(x)-f(a)}{x-a}<0$，因此 $f(a)>m$，由费马定理推论得 $f'(\xi)=0$；然后构造函数证明之。
 
 注意：因导函数的特殊性意味着不是任何一个函数都能是某个函数的导函数
 
@@ -378,8 +378,8 @@ $$
 
 $\frac{\infty}{\infty}$ 型证明：根据柯西定理
 $$
-\forall\epsilon>0,\exist\delta>0,\forall x\in(a,a+\delta),L-\frac{\epsilon}{2}<\frac{f'(x)}{g'(x)}<L+\frac{\epsilon}{2}\\
-\exist\xi\in(x,a+\delta),\frac{f'(\xi)}{g'(\xi)}=\frac{f(a+\delta)-f(x)}{g(a+\delta)-g(x)}=\frac{\frac{f(a+\delta)}{g(x)}-\frac{f(x)}{g(x)}}{\frac{g(a+\delta)}{g(x)}-1}\\
+\forall\epsilon>0,\exists\delta>0,\forall x\in(a,a+\delta),L-\frac{\epsilon}{2}<\frac{f'(x)}{g'(x)}<L+\frac{\epsilon}{2}\\
+\exists\xi\in(x,a+\delta),\frac{f'(\xi)}{g'(\xi)}=\frac{f(a+\delta)-f(x)}{g(a+\delta)-g(x)}=\frac{\frac{f(a+\delta)}{g(x)}-\frac{f(x)}{g(x)}}{\frac{g(a+\delta)}{g(x)}-1}\\
 \frac{f(x)}{g(x)}=\frac{f'(\xi)}{g'(\xi)}\left(1-\frac{g(a+\delta)}{g(x)}\right)+\frac{f(a+\delta)}{g(x)}=\frac{f'(\xi)}{g'(\xi)}+r(x)\\
 L-\epsilon<\frac{f(x)}{g(x)}<L+\epsilon
 $$
@@ -527,7 +527,7 @@ Schwarz 施瓦茨不等式：
 $$
 \left(\int^b_af(x)g(x)dx\right)^2\le\int^b_af^2(x)dx\cdot\int^b_ag^2(x)dx
 $$
-积分中值定理：函数 $f$ 连续，$g$ 黎曼可积，$g(x)$ 在 $[a,b]$ 不变号，则 $\exist\xi\in[a,b]$，使得
+积分中值定理：函数 $f$ 连续，$g$ 黎曼可积，$g(x)$ 在 $[a,b]$ 不变号，则 $\exists\xi\in[a,b]$，使得
 $$
 \int^b_af(x)g(x)dx=f(\xi)\int^b_ag(x)dx
 $$
@@ -574,7 +574,7 @@ $\Phi(x)=\int^x_af(t)dt$，$\Phi$ 连续且可导，且 $\Phi'(x)=f(x)$
 ### 正项级数
 
 1. 正项级数收敛充要条件是其部分和数列有上界。例：讨论 $p$ 级数的敛散性（$p>1$ 收敛，$p\le1$ 发散，用积分）
-2. 比较判别法：若 $\exist N\in \mathbf{Z}^+,\forall n>N,a_n\le b_n$，则当 $b_n$ 级数收敛时 $a_n$ 级数也收敛，当 $a_n$ 级数发散时 $b_n$ 级数发散
+2. 比较判别法：若 $\exists N\in \mathbf{Z}^+,\forall n>N,a_n\le b_n$，则当 $b_n$ 级数收敛时 $a_n$ 级数也收敛，当 $a_n$ 级数发散时 $b_n$ 级数发散
 3. 比较判别法极限形式：$\lim_{n\to\infty}\frac{a_n}{b_n}=l$，当 $0<l<+\infty$ 时敛散性相同
 4. $p$-判别法：即比较某正项级数与 $p$ 级数
 5. 比值判别法：$\lim_{n\to\infty}\frac{a_{n+1}}{a_n}=l$，当 $0\le l<1$ 时级数收敛，当 $1<l\le+\infty$ 时级数发散，$l=1$ 需要另外判断

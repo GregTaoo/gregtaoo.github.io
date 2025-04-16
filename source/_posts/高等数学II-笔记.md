@@ -268,13 +268,13 @@ f(x,y)=\sum_{k=0}^n \frac{1}{k!}\left( \Delta x \frac{\partial}{\partial x} + \D
 $$
 - 二阶泰勒公式
 $$
-\begin{align*}
+\begin{aligned}
 f(x, y) \approx\ & f(a, b) 
 + f_x(a, b)(x - a) + f_y(a, b)(y - b) \\
 & + \frac{1}{2}f_{xx}(a, b)(x - a)^2 
 + f_{xy}(a, b)(x - a)(y - b) 
 + \frac{1}{2}f_{yy}(a, b)(y - b)^2
-\end{align*}
+\end{aligned}
 $$
 
 ### 二元函数极值
