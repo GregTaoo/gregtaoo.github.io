@@ -282,3 +282,70 @@ $$
 - 二元函数极值必要条件：$f_x(x_0,y_0)=f_y(x_0,y_0)=0$（驻点），极值点存在于驻点或至少有一个偏导数不存在的点中
 - 二元函数极值充分条件：若二元函数在某领域有二阶连续偏导数，且 $P_0(x_0,y_0)$ 为驻点，记 $A=f_{xx}(x_0,y_0),B=f_{xy},C=f_{yx},D=f_{yy}$，且 $H=AC-B^2$，则： 当 $H>0$ 时 $f(x_0,y_0)$ 为极值，若 $A>0$ 为极小值，若 $A<0$ 为极大值；当 $H<0$ 时不是极值
 - 条件极值/拉格朗日乘数法：在 $\phi=0$ 的约束下求 $f$ 极值，引进函数 $F(x,y,z,\lambda)=f+\lambda g$，求解方程组 $F_x=F_y=F_z=F_\lambda=\phi=0$
+
+### 重积分
+
+- Jacobi 行列式：换元的目标对象放在下面。如 $x,y$ 换 $u, v$，则求 $\frac{\partial(x,y)}{\partial(u,v)}$
+- 球坐标：$x=r\sin \phi \cos \theta,y=r\sin \phi \sin \theta,z=r\cos \phi,|J|=r^2\sin \phi$
+- 平面薄片的静力矩：$x$ 轴为 $M_x = \iint_{D} y \mu(x,y)d\sigma$，$y$ 轴为 $M_y = \iint_{D} x \mu(x,y)d\sigma$
+- 质心位置：$x=\frac{M_{y}}{m}=\frac{\iint_{D} x \mu(x,y)d\sigma}{\iint_{D} \mu(x,y)d\sigma},y=\frac{M_{x}}{m}=\frac{\iint_{D} y \mu(x,y)d\sigma}{\iint_{D} \mu(x,y)d\sigma}$
+- 面密度 $\mu$ 为常数时，薄片质心即形心，形心位置：$x=\frac{1}{A_{D}}\iint xd\sigma,y=\frac{1}{A_{D}}\iint yd\sigma$
+- 转动惯量：$I_{x}=\iiint_{\Omega}(y^2+z^2)\mu dV,I_{O}=\iiint_{\Omega}(x^2+y^2+z^2)\mu dV$
+- 引力：$F_x=\iiint_{\Omega}\frac{km_{0}\mu(x-x_{0})}{r^3}dV$
+
+### 第一类曲线/曲面积分
+
+- 曲线 $\int_{C}f(x,y)ds$：$ds=\sqrt{ x'^2(t)+y'^2(t) }dt=\sqrt{ 1+y'^2(t) }dx$
+- 曲面 $\iint_{\Sigma}f(x,y,z)dS$：若从 $x,y,z$ 换到 $u,v$，则令 $\vec{r}(u,v)=(x(u,v),y(u,v),z(u,v))$，$dS=|\vec{r_{x}}\times\vec{r_{y}}|dxdy=|(\frac{\partial(y,z)}{\partial(u,v)},\frac{\partial(z,x)}{\partial(u,v)},\frac{\partial(x,y)}{\partial(u,v)})|dxdy=\sqrt{ A^2+B^2+C^2 }dxdy=\sqrt{ 1+z_{x}^2+z_{y}^2 }dxdy$
+
+### 第二类曲线/曲面积分
+
+- 曲线 $\int_{C}\vec{F}(x,y)\cdot d \vec{r}=\int_{C}[\vec{F}(x,y)\cdot \vec{e_{r}}(x,y)]ds=\int_{C}Pdx+Qdy=\int_{\alpha}^\beta[Px'(t)+Qy'(t)]dt=\int_{a}^b[P+Qy'(x)]dx$
+- 曲面 $\iint_{\Sigma}\vec{F}(x,y,z)\cdot d \vec{S}=\iint_{\Sigma}\vec{F}\cdot\vec{n^0}dS=\pm \iint_{D}(PA+QB+RC)dudv=\pm \iint_{D_{xy}}(-Pz_{x}-Qz_{y}+R)dxdy$
+- 曲面合一投影法：$x,y,z$ 分开求；即 $P=Q=0$时，$\iint_{\Sigma}Rdxdy=\pm \iint_{D_{xy}}R(x,y,z(x,y))dxdy$
+
+### Green 公式
+
+- 正方向：逆时针；反方向：顺时针
+- 若 $D$ 内的任意一条封闭曲线所围成的区域都在 $D$ 内则称区域 $D$ 为单连通的，否则为复连通的
+- $\oint_{C^+}Pdx+Qdy=\iint_{D}\left( \frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y} \right)dxdy$ （沿曲线切向量方向）
+- 向量形式：$\vec{F}(x,y)=(f,g), \oint_{C^+}\vec{F}\cdot \vec{n^0}ds=\oint_{C}(-gdx+fdy)= \iint_{D} \nabla \cdot \vec{F}d\sigma=\iint_{D} \left( \frac{\partial f}{{\partial x}}+\frac{\partial g}{{\partial y}} \right) d\sigma$  ($\vec{n}_{0}$ 为法向量，垂直于切向量 $\vec{e_{r}}$，沿垂直方向，用于计算流量) 
+- 如果曲线不封闭，则先封闭，再扣除新增曲线。如果过原点，则画半径为 $\epsilon$ 的圆/椭圆。
+- 平面区域 $D$ 的面积：$A_D=\iint_{D} dxdy=\oint_{C^+}xdy=-\oint_{C^+}ydx=\frac{1}{2}\oint_{C^+}xdy-ydx$
+- 若函数 $P,Q$ 在单连通区域 $D$ 上有连续的偏导数，则以下几个条件相互等价：
+- 1. 对 $D$ 内任一条分段光滑闭曲线 $C$，有 $\oint_{C}Pdx+Qdy=0$
+- 2. 曲线积分 $\int_{C}Pdx+Qdy$ 在 $D$ 内与路径无关
+- 3. 存在 $D$ 上的可微函数 $u(x,y)$，使得 $du=Pdx+Qdy$
+- 4. 等式 $\frac{{\partial Q}}{dx}=\frac{{\partial P}}{{\partial y}}$ 在 $D$ 内处处成立
+
+### 全微分方程
+
+- 前提条件：函数 $P,Q$ 在单连通区域 $D$ 上有连续的偏导数，且等式 $\frac{\partial Q}{dx}=\frac{\partial P}{{\partial y}}$ 在 $D$ 内处处成立
+- 方法1：选择一个点 $(x_0,y_0)$，然后先沿着 $x$ 或 $y$ 轴平行的直线积分，再积到 $(x,y)$
+- 方法2：先取 $u=\int \frac{\partial u}{\partial x}dx=\int Pdx=f(x,y)+C(y)$，则 $\frac{\partial u}{\partial y}=f'(x,y)+C'(y)=Q$，即可解出
+- 若 $\frac{{\partial Q}}{dx}\ne\frac{{\partial P}}{{\partial y}}$，则需要凑微分凑出正确形式，一般需要乘以积分因子：$\frac{1}{x^2}, \frac{1}{y^2}, \frac{1}{xy}, \frac{1}{x^2+y^2}, \frac{1}{x^2y^2}, \frac{1}{\sqrt{ x^2+y^2 }}$
+
+### Gauss 公式
+
+- $S^+$ 为曲面外侧
+
+$$
+\iint_{S^+} Pdydz+Qdzdx+Rdxdy=\iiint_{\Omega}\left(\frac{\partial P}{{\partial x}}+\frac{\partial Q}{{\partial y}}+\frac{\partial R}{{\partial z}}\right)dV
+$$
+- 空间区域 $\Omega$ 体积计算公式：
+$$
+V_{\Omega}=\frac{1}{3}\iint_{S^+}xdydz+ydzdx+zdxdy
+$$
+- 通量：$\Phi=\iint_{\Sigma}\vec{F}\cdot d\vec{S}$
+- 散度：$\nabla \cdot \vec{F}=div \vec{F}=\frac{\partial P}{{\partial x}}+\frac{\partial Q}{{\partial y}}+\frac{\partial R}{{\partial z}}$
+- Gauss 公式的向量形式：$\iint_{S^+}\vec{F}\cdot d\vec{S}=\iiint_{\Omega}div \vec{F}dV$（向量场 $F$ 的散度场为数量场）
+
+### Stokes 公式*
+
+- Green 公式的三维下的推广
+- 曲线 $C$ 方向与曲面 $\Sigma$ 法向量方向（拇指）符合右手法则
+$$
+\oint_{C}Pdx+Qdy+Rdz=\iint_{\Sigma}\left( \frac{\partial R}{{\partial y}}-\frac{\partial Q}{{\partial z}} \right)dydz+\left( \frac{\partial P}{{\partial z}}-\frac{\partial R}{{\partial x}} \right)dzdx+\left( \frac{\partial Q}{{\partial x}}-\frac{\partial P}{{\partial y}} \right)dxdy
+$$
+- 环量：$\int_{L}\vec{F}\cdot d\vec{r}=\int_{L}Pdx+Qdy+Rdz$（即第二类曲线积分）
+- 旋度：即 Green 公式或 Stokes 公式算出来的值，在 $M$ 点旋度记为 $rot \vec{F}(M), curl\vec{F}(M)=\nabla \times \vec{F}$
