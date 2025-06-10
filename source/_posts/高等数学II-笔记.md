@@ -349,3 +349,4 @@ $$
 $$
 - 环量：$\int_{L}\vec{F}\cdot d\vec{r}=\int_{L}Pdx+Qdy+Rdz$（即第二类曲线积分）
 - 旋度：即 Green 公式或 Stokes 公式算出来的值，在 $M$ 点旋度记为 $rot \vec{F}(M), curl\vec{F}(M)=\nabla \times \vec{F}$
+
