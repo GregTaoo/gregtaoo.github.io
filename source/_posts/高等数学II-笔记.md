@@ -316,28 +316,28 @@ $$
 - 1. 对 $D$ 内任一条分段光滑闭曲线 $C$，有 $\oint_{C}Pdx+Qdy=0$
 - 2. 曲线积分 $\int_{C}Pdx+Qdy$ 在 $D$ 内与路径无关
 - 3. 存在 $D$ 上的可微函数 $u(x,y)$，使得 $du=Pdx+Qdy$
-- 4. 等式 $\frac{{\partial Q}}{dx}=\frac{{\partial P}}{{\partial y}}$ 在 $D$ 内处处成立
+- 4. 等式 $\frac{\partial Q}{dx}=\frac{\partial P}{\partial y}$ 在 $D$ 内处处成立
 
 ### 全微分方程
 
-- 前提条件：函数 $P,Q$ 在单连通区域 $D$ 上有连续的偏导数，且等式 $\frac{\partial Q}{dx}=\frac{\partial P}{{\partial y}}$ 在 $D$ 内处处成立
+- 前提条件：函数 $P,Q$ 在单连通区域 $D$ 上有连续的偏导数，且等式 $\frac{\partial Q}{dx}=\frac{\partial P}{\partial y}$ 在 $D$ 内处处成立
 - 方法1：选择一个点 $(x_0,y_0)$，然后先沿着 $x$ 或 $y$ 轴平行的直线积分，再积到 $(x,y)$
 - 方法2：先取 $u=\int \frac{\partial u}{\partial x}dx=\int Pdx=f(x,y)+C(y)$，则 $\frac{\partial u}{\partial y}=f'(x,y)+C'(y)=Q$，即可解出
-- 若 $\frac{{\partial Q}}{dx}\ne\frac{{\partial P}}{{\partial y}}$，则需要凑微分凑出正确形式，一般需要乘以积分因子：$\frac{1}{x^2}, \frac{1}{y^2}, \frac{1}{xy}, \frac{1}{x^2+y^2}, \frac{1}{x^2y^2}, \frac{1}{\sqrt{ x^2+y^2 }}$
+- 若 $\frac{\partial Q}{dx}\ne\frac{\partial P}{\partial y}$，则需要凑微分凑出正确形式，一般需要乘以积分因子：$\frac{1}{x^2}, \frac{1}{y^2}, \frac{1}{xy}, \frac{1}{x^2+y^2}, \frac{1}{x^2y^2}, \frac{1}{\sqrt{ x^2+y^2 }}$
 
 ### Gauss 公式
 
 - $S^+$ 为曲面外侧
 
 $$
-\iint_{S^+} Pdydz+Qdzdx+Rdxdy=\iiint_{\Omega}\left(\frac{\partial P}{{\partial x}}+\frac{\partial Q}{{\partial y}}+\frac{\partial R}{{\partial z}}\right)dV
+\iint_{S^+} Pdydz+Qdzdx+Rdxdy=\iiint_{\Omega}\left(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}\right)dV
 $$
 - 空间区域 $\Omega$ 体积计算公式：
 $$
 V_{\Omega}=\frac{1}{3}\iint_{S^+}xdydz+ydzdx+zdxdy
 $$
 - 通量：$\Phi=\iint_{\Sigma}\vec{F}\cdot d\vec{S}$
-- 散度：$\nabla \cdot \vec{F}=div \vec{F}=\frac{\partial P}{{\partial x}}+\frac{\partial Q}{{\partial y}}+\frac{\partial R}{{\partial z}}$
+- 散度：$\nabla \cdot \vec{F}=div \vec{F}=\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}$
 - Gauss 公式的向量形式：$\iint_{S^+}\vec{F}\cdot d\vec{S}=\iiint_{\Omega}div \vec{F}dV$（向量场 $F$ 的散度场为数量场）
 
 ### Stokes 公式*
@@ -345,7 +345,7 @@ $$
 - Green 公式的三维下的推广
 - 曲线 $C$ 方向与曲面 $\Sigma$ 法向量方向（拇指）符合右手法则
 $$
-\oint_{C}Pdx+Qdy+Rdz=\iint_{\Sigma}\left( \frac{\partial R}{{\partial y}}-\frac{\partial Q}{{\partial z}} \right)dydz+\left( \frac{\partial P}{{\partial z}}-\frac{\partial R}{{\partial x}} \right)dzdx+\left( \frac{\partial Q}{{\partial x}}-\frac{\partial P}{{\partial y}} \right)dxdy
+\oint_{C}Pdx+Qdy+Rdz=\iint_{\Sigma}\left( \frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z} \right)dydz+\left( \frac{\partial P}{\partial z}-\frac{\partial R}{\partial x} \right)dzdx+\left( \frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y} \right)dxdy
 $$
 - 环量：$\int_{L}\vec{F}\cdot d\vec{r}=\int_{L}Pdx+Qdy+Rdz$（即第二类曲线积分）
 - 旋度：即 Green 公式或 Stokes 公式算出来的值，在 $M$ 点旋度记为 $rot \vec{F}(M), curl\vec{F}(M)=\nabla \times \vec{F}$
