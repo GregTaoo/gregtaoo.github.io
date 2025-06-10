@@ -309,7 +309,7 @@ $$
 - 正方向：逆时针；反方向：顺时针
 - 若 $D$ 内的任意一条封闭曲线所围成的区域都在 $D$ 内则称区域 $D$ 为单连通的，否则为复连通的
 - $\oint_{C^+}Pdx+Qdy=\iint_{D}\left( \frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y} \right)dxdy$ （沿曲线切向量方向）
-- 向量形式：$\vec{F}(x,y)=(f,g), \oint_{C^+}\vec{F}\cdot \vec{n^0}ds=\oint_{C}(-gdx+fdy)= \iint_{D} \nabla \cdot \vec{F}d\sigma=\iint_{D} \left( \frac{\partial f}{{\partial x}}+\frac{\partial g}{{\partial y}} \right) d\sigma$  ($\vec{n}_{0}$ 为法向量，垂直于切向量 $\vec{e_{r}}$，沿垂直方向，用于计算流量) 
+- 向量形式：$\vec{F}(x,y)=(f,g)$, $\oint_{C^+}\vec{F}\cdot \vec{n^0}ds=\oint_{C}(-gdx+fdy)= \iint_{D} \nabla \cdot \vec{F}d\sigma=\iint_{D} ( \frac{\partial f}{\partial x}+\frac{\partial g}{\partial y} ) d\sigma$  ($\vec{n}_{0}$ 为法向量，垂直于切向量 $\vec{e_{r}}$，沿垂直方向，用于计算流量) 
 - 如果曲线不封闭，则先封闭，再扣除新增曲线。如果过原点，则画半径为 $\epsilon$ 的圆/椭圆。
 - 平面区域 $D$ 的面积：$A_D=\iint_{D} dxdy=\oint_{C^+}xdy=-\oint_{C^+}ydx=\frac{1}{2}\oint_{C^+}xdy-ydx$
 - 若函数 $P,Q$ 在单连通区域 $D$ 上有连续的偏导数，则以下几个条件相互等价：
